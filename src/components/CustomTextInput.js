@@ -1,5 +1,6 @@
 import React, {useMemo} from 'react';
 import {View, TextInput, StyleSheet, Text} from 'react-native';
+import theme from '../styles/theme';
 
 const CustomTextInput = ({
   placeholder,
@@ -61,6 +62,7 @@ const styles = StyleSheet.create({
     padding: 15,
     width: '100%',
     borderRadius: 10,
+    color: theme.colors.black,
     backgroundColor: '#F3F3F4',
   },
   label: {

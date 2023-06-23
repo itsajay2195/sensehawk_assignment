@@ -10,7 +10,7 @@ const HomeScreen = () => {
   const [usernameOrEmail, setUsernameOrEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-
+  const [signupSuccess, setSuccess] = useState(false);
   const handlePasswordChange = useCallback(text => {
     setPassword(text);
     setError('');
@@ -46,6 +46,7 @@ const HomeScreen = () => {
     setUsernameOrEmail('');
     setPassword('');
     setError('');
+    setSuccess(prev => !prev);
   }, [password, usernameOrEmail, validateEmail, validateUsername]);
 
   const validateEmail = useCallback(input => {
@@ -61,6 +62,12 @@ const HomeScreen = () => {
   const errorMessage = useMemo(() => {
     return error ? <Text style={styles.errorTextstyle}>{error}</Text> : null;
   }, [error]);
+
+  const successMessage = useMemo(() => {
+    return signupSuccess ? (
+      <Text style={styles.successTextStyle}>Sign up successfull</Text>
+    ) : null;
+  }, [signupSuccess]);
 
   return (
     <View style={styles.container}>
@@ -83,6 +90,7 @@ const HomeScreen = () => {
       />
       {errorMessage}
       <PrimaryButton title={'Sign Up'} onPress={handleLogin} />
+      {successMessage}
     </View>
   );
 };
@@ -99,5 +107,9 @@ const styles = StyleSheet.create({
   errorTextstyle: {
     padding: 5,
     color: theme.colors.red,
+  },
+  successTextStyle: {
+    padding: 5,
+    color: theme.colors.blue,
   },
 });
