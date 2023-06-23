@@ -7,8 +7,6 @@ import SocialLoginComponent from '../../components/SocialLoginComponent';
 import Separator from './homeScreenComponents/Separator';
 import HeaderText from './homeScreenComponents/HeaderText';
 
-// const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-// const usernameRegex = /^[a-zA-Z0-9_]{3,16}$/;
 const HomeScreen = () => {
   const [usernameOrEmail, setUsernameOrEmail] = useState('');
   const [password, setPassword] = useState('');

@@ -2,7 +2,7 @@ import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import theme from '../../../styles/theme';
 
-const Separator = () => {
+const Separator = React.memo(() => {
   return (
     <View style={styles.container}>
       <View style={styles.lineStyle} />
@@ -14,12 +14,12 @@ const Separator = () => {
       </View>
     </View>
   );
-};
+});
 
 export default Separator;
 
 const styles = StyleSheet.create({
-  container: {flex: 0.1, justifyContent: 'center', margin: 10},
+  container: {flex: 0.2, justifyContent: 'center', margin: 10},
   lineStyle: {
     flexDirection: 'row',
     borderWidth: 0.25,

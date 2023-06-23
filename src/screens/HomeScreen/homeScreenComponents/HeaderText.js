@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
   textStyle: {
     color: theme.colors.black,
     fontSize: theme.fontSizes.large,
-    fontWeight: 'bold',
+    fontWeight: '700',
     paddingVertical: 10,
   },
 });
