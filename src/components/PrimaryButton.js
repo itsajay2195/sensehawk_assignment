@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     opacity: 0.5,
   },
   btnTextStyle: {
-    color: theme.colors.black,
+    color: theme.colors.white,
     fontSize: theme.fontSizes.large,
     fontWeight: '700',
   },

@@ -1,10 +1,11 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React, {useState, useCallback, useMemo} from 'react';
-import CustomTextInput from '../components/CustomTextInput';
-import PrimaryButton from '../components/PrimaryButton';
-import theme from '../styles/theme';
-import SocialLoginComponent from '../components/SocialLoginComponent';
-import Separator from './components/Separator';
+import CustomTextInput from '../../components/CustomTextInput';
+import PrimaryButton from '../../components/PrimaryButton';
+import theme from '../../styles/theme';
+import SocialLoginComponent from '../../components/SocialLoginComponent';
+import Separator from './homeScreenComponents/Separator';
+import HeaderText from './homeScreenComponents/HeaderText';
 
 // const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 // const usernameRegex = /^[a-zA-Z0-9_]{3,16}$/;
@@ -73,8 +74,9 @@ const HomeScreen = () => {
 
   return (
     <View style={styles.container}>
+      <HeaderText text={'Sign in to Dribble'} />
       <SocialLoginComponent />
-      <Separator/>
+      <Separator />
       <CustomTextInput
         placeholder="email"
         textContentType="emailAddress"
@@ -94,7 +96,7 @@ const HomeScreen = () => {
       />
       {errorMessage}
       <View style={styles.buttonWrapper}>
-        <PrimaryButton title={'Sign Up'} onPress={handleLogin} />
+        <PrimaryButton title={'Sign In'} onPress={handleLogin} />
       </View>
 
       {successMessage}
@@ -119,5 +121,9 @@ const styles = StyleSheet.create({
     padding: 5,
     color: theme.colors.blue,
   },
-  buttonWrapper:{display: 'flex', flexDirection: 'row', marginVertical:10}
+  buttonWrapper: {
+    display: 'flex',
+    width: '50%',
+    marginVertical: 10,
+  },
 });

@@ -39,9 +39,11 @@ const CustomTextInput = ({
         style={[
           styles.textInput,
           {
-            borderWidth: isError ? 1 : null,
-            borderColor: isError ? 'red' : null,
-            backgroundColor: isFocused ? 'white' : '#F3F3F4',
+            borderWidth: isFocused ? 1 : null,
+            borderColor: isFocused ? theme.colors.grey : null,
+            backgroundColor: isFocused
+              ? theme.colors.white
+              : theme.colors.greyScondray,
           },
           textInputStyle,
         ]}
