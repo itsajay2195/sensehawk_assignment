@@ -35,6 +35,11 @@ const HomeScreen = () => {
       return;
     }
 
+    if (password.length < 6) {
+      setError('password must have a minimum 6 letters.');
+      return;
+    }
+
     const isEmail = validateEmail(usernameOrEmail);
     const isUsername = validateUsername(usernameOrEmail);
 
