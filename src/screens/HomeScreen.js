@@ -3,6 +3,8 @@ import React, {useState, useCallback, useMemo} from 'react';
 import CustomTextInput from '../components/CustomTextInput';
 import PrimaryButton from '../components/PrimaryButton';
 import theme from '../styles/theme';
+import SocialLoginComponent from '../components/SocialLoginComponent';
+import Separator from './components/Separator';
 
 // const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 // const usernameRegex = /^[a-zA-Z0-9_]{3,16}$/;
@@ -71,6 +73,8 @@ const HomeScreen = () => {
 
   return (
     <View style={styles.container}>
+      <SocialLoginComponent />
+      <Separator/>
       <CustomTextInput
         placeholder="email"
         textContentType="emailAddress"
@@ -89,7 +93,10 @@ const HomeScreen = () => {
         label={'Password'}
       />
       {errorMessage}
-      <PrimaryButton title={'Sign Up'} onPress={handleLogin} />
+      <View style={styles.buttonWrapper}>
+        <PrimaryButton title={'Sign Up'} onPress={handleLogin} />
+      </View>
+
       {successMessage}
     </View>
   );
@@ -112,4 +119,5 @@ const styles = StyleSheet.create({
     padding: 5,
     color: theme.colors.blue,
   },
+  buttonWrapper:{display: 'flex', flexDirection: 'row', marginVertical:10}
 });
