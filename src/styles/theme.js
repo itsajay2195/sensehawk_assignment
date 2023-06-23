@@ -10,6 +10,7 @@ export default {
     greyScondray: '#F3F3F4',
     blueSecondary: '#8FB1CC',
     black: '#000000',
+    red: '#ff0000',
   },
   fontSizes: {
     small: 12,

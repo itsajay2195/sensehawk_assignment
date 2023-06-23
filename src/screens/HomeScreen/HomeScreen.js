@@ -25,12 +25,13 @@ const HomeScreen = () => {
   const handleLogin = useCallback(() => {
     setError('');
 
-    if (!password) {
-      setError('Please enter a password');
-      return;
-    }
     if (!usernameOrEmail) {
       setError('Please enter a username or email address');
+      return;
+    }
+
+    if (!password) {
+      setError('Please enter a password');
       return;
     }
 
@@ -94,9 +95,8 @@ const HomeScreen = () => {
       />
       {errorMessage}
       <View style={styles.buttonWrapper}>
-        <PrimaryButton title={'Sign In'} onPress={handleLogin} />
+        <PrimaryButton title={'Sign In'} onPress={handleLogin} error={error} />
       </View>
-
       {successMessage}
     </View>
   );
